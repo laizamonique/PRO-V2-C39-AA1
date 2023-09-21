@@ -105,6 +105,14 @@ class Game {
   }
 
   handleResetButton() {}
+  this.resetButton.mousePressed(() => {
+  database.ref("/").set({ playerCount: 0,
+   gameState: 0,
+   players: {}
+   }); 
+   window.location.reload();
+   });
+   }
 
   showLeaderboard() {
     var leader1, leader2;
@@ -154,5 +162,15 @@ class Game {
       player.positionY += 10;
       player.update();
     }
+    if (keyIsDown (LEFT ARROW) && player.positionx > width / 3- 50) {
+ player.update();
+player.positionX -= 5; 
+}
+
+if (keyIsDown (RIGHT_ARROW) && player.positionx < width / 2 + 300) {
+
+player.positionX += 5;
+  player.update();
   }
+}
 }
